@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * A minimalistic chat client that connects to a server.
  */
-public class ChatClient {
+public class Client {
 
     private static final int DEFAULT_PORT = 2000;
     private static final String DEFAULT_HOST = "127.0.0.1";
@@ -14,15 +14,15 @@ public class ChatClient {
     private BufferedReader in;
     private PrintWriter out;
 
-    public ChatClient() {
+    public Client() {
         this(DEFAULT_HOST, DEFAULT_PORT);
     }
 
-    public ChatClient(String host) {
+    public Client(String host) {
         this(host, DEFAULT_PORT);
     }
 
-    public ChatClient(String host, int port) {
+    public Client(String host, int port) {
         try {
             socket = new Socket(host, port);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -87,7 +87,7 @@ public class ChatClient {
             port = Integer.parseInt(args[1]);
         }
 
-    new ChatClient(host, port);
+    new Client(host, port);
     System.out.println("Chat client started.");
     System.out.println("Connected to " + host + " on port: " + port);
     }
