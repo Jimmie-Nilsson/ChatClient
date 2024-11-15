@@ -7,10 +7,10 @@ import java.nio.charset.StandardCharsets;
 /**
  * A minimalistic chat client that connects to a server to send and receive messages.
  * This client establishes a connection to a specified host and port.
- *
+ * <p>
  * It listens for incoming messages from the server
  * on a separate thread while simultaneously handling user input.
- *
+ * <p>
  * The client uses the following commands:
  * - "exit": Closes the connection and terminates the chat session.
  * Usage:
@@ -31,6 +31,7 @@ public class Client {
     /**
      * Initializes a new Client instance, connecting to the specified host and port.
      * Sets up input and output streams, initialized GUI application and starts the chat.
+     *
      * @param host the host address the client should connect to.
      * @param port the port number the client should connect to.
      */
@@ -152,6 +153,7 @@ public class Client {
     /**
      * Displays an error message in a popup dialog.
      * This method ensures the message is displayed on the Event Dispatch Thread.
+     *
      * @param message the error message to display.
      */
     private void showError(String message) {
